@@ -21,7 +21,6 @@
 ### 2. Clone the Repository
 
 ```bash
-cd ~/Desktop/SeleniumJS-Projects
 git clone https://github.com/JhonPaoooo/Cypress-Mastery.git
 ```
 ### 3. Install Dependencies
