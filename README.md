@@ -18,7 +18,6 @@
 
 - Windows: Navigate to your Desktop, right-click, and select New Folder. Name it Cypress-Projects.
 
-```
 ### 2. Clone the Repository
 
 ```bash
