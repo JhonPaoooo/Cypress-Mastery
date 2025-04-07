@@ -18,10 +18,6 @@
 
 - Windows: Navigate to your Desktop, right-click, and select New Folder. Name it Cypress-Projects.
 
-- Mac/Linux: Open your terminal and run the following command to create a folder:
-
-```bash
-mkdir ~/Desktop/Cypress-Projects
 ```
 ### 2. Clone the Repository
 
