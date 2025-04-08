@@ -13,6 +13,7 @@ describe('login test suite', () => {          // describe block - test suite or 
     cy.get('[data-test="password"]').type("secret_sauc")
     cy.get('[data-test="login-button"]').click()
     cy.get('[data-test="error"]').should('be.visible')
+    cy.screenshot({capture: "fullPage"})
   })
 })
 

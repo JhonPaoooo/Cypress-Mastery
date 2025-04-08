@@ -4,8 +4,10 @@
   "description": "cypress",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1" , 
-    "login-test": "npx cypress run --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196  --spec 'cypress/e2e/login.cy.js' --browser chrome"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "login-test": "npx cypress run --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196  --spec 'cypress/e2e/login.cy.js' --browser chrome",
+    "e2e-test": "npx cypress run --spec 'cypress/e2e/e2e.cy.js'  --browser chrome"
+    
   },
   "repository": {
     "type": "git",
@@ -20,5 +22,8 @@
   "homepage": "https://github.com/JhonPaoooo/Cypress-Mastery#readme",
   "dependencies": {
     "cypress": "^14.2.1"
+  },
+  "devDependencies": {
+    "cypress-mochawesome-reporter": "^3.8.2"
   }
 }
