@@ -10,29 +10,22 @@ describe('E-Commerce Test Flow/Workflow', () => {
     it('User should successfully login', () => {
         cy.url().should('include', 'inventory')
         // cy.screenshot()
-        cy.takeDynamicScreenshot('login-success');
+        cy.takeScreenshot('login-success');
     });
   
     it('Should successfully add item to cart', () => {
-      cy.addToCart(); // Custom Command for adding to cart
+      cy.addToCart(); 
       cy.get('[data-test="shopping-cart-link"]')
-    //   cy.screenshot()
-    cy.takeDynamicScreenshot('adding-to-cart-success');
+    cy.takeScreenshot('adding-to-cart-success');
     });
   
     it('Should successfully checkout', () => {
-         // Custom Command for checkout process
       cy.checkout("john", "johnny", "8114")
       cy.get('[data-test="continue"]').click()
       cy.url().should('include', 'checkout-step-two.html')
       cy.get('[data-test="finish"]').click()
       cy.contains('Thank you for your order!').should('be.visible')
-      cy.takeDynamicScreenshot('checkout-success');
-    //   cy.url().should('include', 'cart.html')
-    
-    //   cy.screenshot()
-    //   cy.contains('Sauce Labs Backpack').should('be.visible')
-  
+      cy.takeScreenshot('checkout-success');
     });
   });
   

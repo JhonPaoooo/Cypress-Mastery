@@ -6,8 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "login-test": "npx cypress run --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196  --spec 'cypress/e2e/login.cy.js' --browser chrome",
-    "e2e-test": "npx cypress run --spec 'cypress/e2e/e2e.cy.js'  --browser chrome"
-    
+    "ecom-flow-test": "npx cypress run --spec 'cypress/e2e/ecom-flow.cy.js'  --browser chrome"
   },
   "repository": {
     "type": "git",
@@ -24,6 +23,7 @@
     "cypress": "^14.2.1"
   },
   "devDependencies": {
+    "@faker-js/faker": "^9.6.0",
     "cypress-mochawesome-reporter": "^3.8.2"
   }
 }

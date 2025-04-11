@@ -5,8 +5,8 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   projectId: "r3zdnt",
   experimentalStudio: true,
-  viewportHeight: 1080,
-  viewportWidth: 1920,
+  viewportHeight: 660,
+  viewportWidth: 1000,
   defaultCommandTimeout: 12000,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
