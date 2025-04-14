@@ -1,0 +1,23 @@
+
+{
+    "name": "Johnny Bravo",
+    "emailAddress": "bravo@gmail.com",
+    "passWord": "qwerty_12478",
+    "dateofBirth":{
+     "day": "4",
+     "month": "May",
+     "year": "2008"
+    },
+    "firstName": "Johnny",
+    "lastName": "Bravo",
+    "company": "JB Solutions",
+    "address": "85 Rizal St. Yishun Singapore",
+    "address2": "85 Rizal St. Yishun Singapore",
+    "country": "Singapore",
+    "state": "Yishun",
+    "city": "Singapore",
+    "zipcode": "8118",
+    "number": "09276572904"
+  }
+
+ 

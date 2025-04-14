@@ -16,9 +16,9 @@ describe('Registration', () => {
 
     //Fakers with the use of fixtures calling the testData file in command.js
     it('User should able to logout', () => {
-            cy.fixture('testData').then((testData) => {
-                cy.get('form > :nth-child(2) > .input').type(testData.username)
-                cy.get('form > :nth-child(4) > .input').type(testData.password)
+            cy.fixture('testingData').then((testingData) => {
+                cy.get('form > :nth-child(2) > .input').type(testingData.username)
+                cy.get('form > :nth-child(4) > .input').type(testingData.password)
                 cy.get(':nth-child(5) > .button').click()
                 // cy.get(':nth-child(5) > .button').click()
         // cy.takeScreenshot('logout-success');
@@ -28,9 +28,9 @@ describe('Registration', () => {
     //Fakers with the use of fixtures calling the testData file in command.js
     it('User should able to login', () => {
         cy.visit('https://parabank.parasoft.com/parabank/index.htm?ConnType=JDBC')
-        cy.fixture('testData').then((testData) => {
-        cy.get('form > :nth-child(2) > .input').type(testData.username)
-        cy.get('form > :nth-child(4) > .input').type(testData.password)
+        cy.fixture('testingData').then((testingData) => {
+        cy.get('form > :nth-child(2) > .input').type(testingData.username)
+        cy.get('form > :nth-child(4) > .input').type(testingData.password)
         cy.get(':nth-child(5) > .button').click()
         // cy.takeScreenshot('login-is-success');
     });
