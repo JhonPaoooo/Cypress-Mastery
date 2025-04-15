@@ -1,4 +1,4 @@
-<reference types ="cypress" />
+{/* <reference types ="cypress" /> */}
 describe('Radio Button, Checkbox, Dropdown Menu', () => {
  
     it('Should successfully check - Check Me Out - 2', () => {

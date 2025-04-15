@@ -43,7 +43,7 @@ Cypress.Commands.add('authSauceDemo', (userNAme, passWOrd) => {
   cy.get('[data-test="login-button"]').click()
 
 })
-Cypress.Commands.add('addToCart', () => { 
+Cypress.Commands.add('cartAdd', () => { 
     cy.get('[data-test="add-to-cart-sauce-labs-backpack"]').click()
       cy.get('[data-test="shopping-cart-link"]').should('contain', '1')
 });

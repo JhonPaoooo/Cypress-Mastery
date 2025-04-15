@@ -14,7 +14,7 @@ describe('E-Commerce Test Flow/Workflow', () => {
     });
   
     it('Should successfully add item to cart', () => {
-      cy.addToCart(); 
+      cy.cartAdd(); 
       cy.get('[data-test="shopping-cart-link"]')
     cy.takeScreenshot('adding-to-cart-success');
     });
