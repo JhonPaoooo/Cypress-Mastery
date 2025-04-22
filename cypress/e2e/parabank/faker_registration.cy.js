@@ -1,5 +1,5 @@
 
-import { testData } from '../support/utility.js'
+import { testData } from '../../support/utility.js'
 
 describe('Registration', () => {
     beforeEach(() => {

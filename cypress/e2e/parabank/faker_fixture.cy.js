@@ -1,4 +1,5 @@
 import { faker } from '@faker-js/faker';
+
 describe('Registration', () => {
     beforeEach(() => {
         cy.visit('https://parabank.parasoft.com/parabank/register.htm')
@@ -9,7 +10,7 @@ describe('Registration', () => {
         cy.clearDB()
         // cy.clearAllCookies()
         // cy.clearLocalStorage()
-        cy.fakers()
+        cy.fillRegistrationForm()
         cy.contains('Your account was created successfully. You are now logged in.').should('be.visible')
         // cy.takeScreenshot('registration-success');
     });

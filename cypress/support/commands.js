@@ -34,7 +34,10 @@ import { exercise } from '../support/exercise.js'
 import { payment } from '../support/payment.js'
 import { signup } from '../support/signup.js'
 import { signlog } from '../support/signlog.js'
-import RegistrationPage from './pages/registration.page';
+import RegistrationPage from './pages/parabank/registration.page.js';
+import SignupPage from './pages/automation-exercise/signup.page.js';
+import CartPage from "./pages/automation-exercise/addtocart.page.js";
+import CheckPage from './pages/automation-exercise/checkout.page.js'
 
 //SAUCE DEMO
 Cypress.Commands.add('authSauceDemo', (userNAme, passWOrd) => {
@@ -99,22 +102,23 @@ Cypress.Commands.add('register', () => {
 });
 
 //Fakers - PARABANK - Registration
-Cypress.Commands.add('fakers', () => { 
-    const user = createUser()
-    cy.writeFile('cypress/fixtures/testingData.json', user);
-  cy.get('input[id="customer.firstName"').type(user.firstName)
-  cy.get('input[id="customer.lastName"').type(user.lastName)
-  cy.get('input[id="customer.address.street"').type(user.street)
-  cy.get('input[id="customer.address.city"').type(user.city)
-  cy.get('input[id="customer.address.state"').type(user.state)
-  cy.get('input[id="customer.address.zipCode"').type(user.zipCode)
-  cy.get('input[id="customer.phoneNumber"').type(user.phoneNumber)
-  cy.get('input[id="customer.ssn"').type(user.ssn)
-  cy.get('input[id="customer.username"').type(user.username)
-  cy.get('input[id="customer.password"').type(user.password)
-  cy.get('input[id="repeatedPassword"').type(user.password)
-  cy.get('input[type="submit"][value="Register"]').click()
-});
+
+// Cypress.Commands.add('fakers', () => { 
+//     const user = createUser()
+//     cy.writeFile('cypress/fixtures/testingData.json', user);
+//   cy.get('input[id="customer.firstName"').type(user.firstName)
+//   cy.get('input[id="customer.lastName"').type(user.lastName)
+//   cy.get('input[id="customer.address.street"').type(user.street)
+//   cy.get('input[id="customer.address.city"').type(user.city)
+//   cy.get('input[id="customer.address.state"').type(user.state)
+//   cy.get('input[id="customer.address.zipCode"').type(user.zipCode)
+//   cy.get('input[id="customer.phoneNumber"').type(user.phoneNumber)
+//   cy.get('input[id="customer.ssn"').type(user.ssn)
+//   cy.get('input[id="customer.username"').type(user.username)
+//   cy.get('input[id="customer.password"').type(user.password)
+//   cy.get('input[id="repeatedPassword"').type(user.password)
+//   cy.get('input[type="submit"][value="Register"]').click()
+// });
 
 // Cypress.Commands.add('confirm', (luserName, lpassWord) => { 
 //   cy.get('form > :nth-child(2) > .input').type(luserName)
@@ -134,13 +138,13 @@ Cypress.Commands.add('restoreCart', () => {
   });
 });
 
-Cypress.Commands.add('addToCart', () =>{
-  cy.get('.features_items > :nth-child(3) > .product-image-wrapper > .single-products > .productinfo > .btn').click()
-            cy.get('.modal-footer > .btn').should('be.visible')
-            cy.get('.modal-footer > .btn').click()
-            cy.get('.shop-menu > .nav > :nth-child(3)').click()
+// Cypress.Commands.add('addToCart', () =>{
+//   cy.get('.features_items > :nth-child(3) > .product-image-wrapper > .single-products > .productinfo > .btn').click()
+//             cy.get('.modal-footer > .btn').should('be.visible')
+//             cy.get('.modal-footer > .btn').click()
+//             cy.get('.shop-menu > .nav > :nth-child(3)').click()
           
-})
+// })
 Cypress.Commands.add('checkOut', ()=>{
             cy.get('.col-sm-6 > .btn').click()
             cy.get('.modal-footer > .btn').should('be.visible')
@@ -271,32 +275,54 @@ Cypress.Commands.add('pay', ()=>{
 })
 
   //Used in TC15_Register-before-Checkout
-Cypress.Commands.add('sign', ()=>{
-  const upsign = signup()
-            cy.get('[data-qa="signup-name"]').type(upsign.name);
-            cy.get('[data-qa="signup-email"]').type(upsign.emailAddress);
-            cy.get('[data-qa="signup-button"]').click();
-            cy.get('#id_gender1').click()
-            cy.get('[data-qa="password"]').type(upsign.password)
-            cy.get('[data-qa="days"]').select(upsign.day);
-            cy.get('[data-qa="months"]').select(upsign.month);
-            cy.get('[data-qa="years"]').select(upsign.year);
-            cy.get('#newsletter').click()
-            cy.get('[data-qa="first_name"]').type(upsign.firstName);
-            cy.get('[data-qa="last_name"]').type(upsign.lastName);
-            cy.get('[data-qa="company"]').type(upsign.company);
-            cy.get('[data-qa="address"]').type(upsign.address);
-            cy.get('[data-qa="address2"]').type(upsign.address);
-            cy.get('[data-qa="country"]').select(upsign.country);
-            cy.get('[data-qa="state"]').type(upsign.state);
-            cy.get('[data-qa="city"]').type(upsign.city);
-            cy.get('[data-qa="zipcode"]').type(upsign.zipCode);
-            cy.get('[data-qa="mobile_number"]').type(upsign.phoneNumber);
-})
-Cypress.Commands.add('fillRegistrationForm', (customerData = generateCustomerData()) => {
+// Cypress.Commands.add('sign', ()=>{
+//   const upsign = signup()
+//             cy.get('[data-qa="signup-name"]').type(upsign.name);
+//             cy.get('[data-qa="signup-email"]').type(upsign.emailAddress);
+//             cy.get('[data-qa="signup-button"]').click();
+//             cy.get('#id_gender1').click()
+//             cy.get('[data-qa="password"]').type(upsign.password)
+//             cy.get('[data-qa="days"]').select(upsign.day);
+//             cy.get('[data-qa="months"]').select(upsign.month);
+//             cy.get('[data-qa="years"]').select(upsign.year);
+//             cy.get('#newsletter').click()
+//             cy.get('[data-qa="first_name"]').type(upsign.firstName);
+//             cy.get('[data-qa="last_name"]').type(upsign.lastName);
+//             cy.get('[data-qa="company"]').type(upsign.company);
+//             cy.get('[data-qa="address"]').type(upsign.address);
+//             cy.get('[data-qa="address2"]').type(upsign.address);
+//             cy.get('[data-qa="country"]').select(upsign.country);
+//             cy.get('[data-qa="state"]').type(upsign.state);
+//             cy.get('[data-qa="city"]').type(upsign.city);
+//             cy.get('[data-qa="zipcode"]').type(upsign.zipCode);
+//             cy.get('[data-qa="mobile_number"]').type(upsign.phoneNumber);
+// })
+Cypress.Commands.add('fillRegistrationForm', (customerData = createUser()) => {
   RegistrationPage.fillSignUpForm(customerData);
   RegistrationPage.submitSignUpForm();
   RegistrationPage.verifySignUpSuccess(customerData.username);
+});
+Cypress.Commands.add('fillSignupForm', () => {
+  SignupPage.fillSignupForm();
+  // SignupPage.login();
+
+});
+Cypress.Commands.add('login', (login = signup()) => {
+  SignupPage.login(login);
+  // SignupPage.login();
+
+});
+Cypress.Commands.add('login', (login = signup()) => {
+  SignupPage.login(login);
+  // SignupPage.login();
+
+});
+Cypress.Commands.add("addcart", () => {
+  CartPage.addcart();
+  CartPage.verifyCartPage()
+});
+Cypress.Commands.add("verifyCheckoutDetails", () => {
+  CheckPage.verifyCheckoutDetails();
 });
 
 
