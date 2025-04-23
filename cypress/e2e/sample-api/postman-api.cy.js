@@ -1,17 +1,23 @@
-describe('Using Postman to Cypress - Update User', () => {
+// describe('Using Postman to Cypress - Update User', () => {
+
+    import { fakdetail, fakedetail } from '../../support/postman_api';
+
     const BASE_URL = 'http://localhost:3000/api/users';
     const AUTH_TOKEN = 'Bearer STATIC_TOKEN_123';
 
     describe('Using Postman to cypress', () => {
+
+        let userId;
+        let createdUserName;
+        let createdUserEmail;
+        let createdPassword;
+
         it('POST - Create Users', () => {
+            const fakedata = fakedetail();
             cy.api({
                 method: 'POST',
                 url: BASE_URL + '/register',
-                body: {
-                    name: "Hii Penduko",
-                    email: "hii@email.com",
-                    password: "pass123"
-                }
+                body: fakedata,
             }).then((response) => {
                 expect(response.status).to.eq(201);
                 expect(response.body).to.have.property('message');
@@ -20,7 +26,10 @@ describe('Using Postman to Cypress - Update User', () => {
                 expect(response.body.user).to.have.property('name')
                 expect(response.body.user).to.have.property('email')
 
-
+                userId = response.body.user.id;
+                createdUserName = response.body.user.name;
+                createdUserEmail = response.body.user.email;
+                createdPassword = response.body.password;
             });
         });
         it('POST - Login Users', () => {
@@ -28,8 +37,8 @@ describe('Using Postman to Cypress - Update User', () => {
                 method: 'POST',
                 url: BASE_URL + '/login',
                 body: {
-                    email: "hii@email.com",
-                    password: "pass123"
+                    email: createdUserEmail,
+                    password: 'password123'
                 }
             }).then((response) => {
                 expect(response.status).to.eq(200);
@@ -41,17 +50,14 @@ describe('Using Postman to Cypress - Update User', () => {
             });
         });
         it('PUT - Update User', () => {
+            const putUser = fakedetail();
             cy.api({
                 method: 'PUT',
-                url: BASE_URL + '/1', // Replace '123' with the actual user ID
+                url: `${BASE_URL}/${userId}`, // Ensure userId is dynamically added
                 headers: {
                     Authorization: AUTH_TOKEN // Static token for authentication
                 },
-                body: {
-                    name: "New ulit Penduko",
-                    email: "grat@gmail.com",
-                    password: "newpass123"
-                }
+                body: putUser
             }).then((response) => {
                 expect(response.status).to.eq(200);
                 expect(response.body).to.have.property('message');
@@ -80,7 +86,7 @@ describe('Using Postman to Cypress - Update User', () => {
         it('DELETE - User', () => {
             cy.api({
                 method: 'DELETE',
-                url: BASE_URL + '/3',
+                url: `${BASE_URL}/${userId}`, // Ensure userId is dynamically added
                 headers: {
                     Authorization: AUTH_TOKEN // Static token for authentication
                 },
@@ -91,4 +97,4 @@ describe('Using Postman to Cypress - Update User', () => {
             });
         });
     });
-});
+// });

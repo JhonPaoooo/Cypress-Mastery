@@ -9,7 +9,7 @@ module.exports = defineConfig({
   //viewportHeight: 660,
   //viewportWidth: 1000,
   defaultCommandTimeout: 1000,
-  retries: 6,
+  // retries: 6,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
