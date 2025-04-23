@@ -32,23 +32,23 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 5
     it('Verify user should be able to redirect to Cart page', ()=>{
-        cy.addToCart()  
+        cy.addcart()  
     });
     // Test Case 6
     it('Verify that cart page is displayed', ()=>{
-        cy.addToCart()
+        cy.addcart()
         cy.get('.cart_quantity').should('be.visible')
         cy.get('.cart_total').should('be.visible')
         cy.url().should('include', 'view_cart')
     });
     // Test Case 7
     it('Verify proceed to checkout', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
     });
     // Test Case 8
     it('Verify clicking Register/Login button', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -58,7 +58,7 @@ describe('Verify Register while checkout', ()=> {
     // Test Case 9
     it('Verify filling details in Signup and create account', ()=>{
         // const activity = exercise()
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -72,7 +72,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 10
     it('Verify account created and click "Continue" button', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -87,7 +87,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 11
     it('Verify Logged in as username at top', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -101,7 +101,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 12
     it('Verify clicking cart button when logged in', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -115,7 +115,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 13
     it('Verify clicking "Proceed to Checkout" button when logged in', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -131,7 +131,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 14
     it('Verify "Address Details" and "Review Your Order"', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -149,7 +149,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 15
     it('Verify entering a description in comment text area and click "Place Order', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -167,7 +167,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 16
     it('Verify entering a payment details: "Name on Card", "Card Number", "CVC", "Expiration Date"', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.checkOut()
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
@@ -187,7 +187,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 17
     it('Verify clicking "Pay and Confirm Order" button', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.get(':nth-child(4) > a').click()
         cy.get('.login-form > h2').should('contain', 'Login to your account')
         cy.get('.signup-form > h2').should('contain', 'New User Signup!')
@@ -209,7 +209,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 18
     it('Verify success message "Your order has been placed successfully!"', ()=>{
-        cy.addToCart() 
+        cy.addcart() 
         cy.get(':nth-child(4) > a').click()
         cy.get('.signup-form > h2').should('contain', 'New User Signup!')
         cy.registration()
@@ -230,7 +230,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 19
     it('Verify clicking "Delete Account" button', ()=>{
-      cy.addToCart() 
+      cy.addcart() 
       cy.get(':nth-child(4) > a').click()
       cy.get('.signup-form > h2').should('contain', 'New User Signup!')
       cy.registration()
@@ -253,7 +253,7 @@ describe('Verify Register while checkout', ()=> {
     });
     // Test Case 20
     it('Verify "ACCOUNT DELETED!"! and click "Continue" button', ()=>{
-      cy.addToCart() 
+      cy.addcart() 
       cy.get(':nth-child(4) > a').click()
       cy.get('.signup-form > h2').should('contain', 'New User Signup!')
       cy.registration()
