@@ -19,8 +19,10 @@ module.exports = defineConfig({
     saveAllAttempts: false,
   },
   e2e: {
+    excludeSpecPattern: ['cypress/e2e/postman-api/*'],
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
+
       // implement node event listeners here
       on('before:run', async (details) => {
         console.log('override before:run');

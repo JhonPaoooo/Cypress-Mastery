@@ -1,6 +1,6 @@
 // describe('Using Postman to Cypress - Update User', () => {
 
-    import { fakdetail, fakedetail } from '../../support/postman_api';
+    import { fakdetail, fakedetail } from '../support/postman_api';
 
     const BASE_URL = 'http://localhost:3000/api/users';
     const AUTH_TOKEN = 'Bearer STATIC_TOKEN_123';
