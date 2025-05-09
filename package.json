@@ -14,6 +14,7 @@
     "cy-qa": "npx cypress open --config-file qa.config.js",
     "cy-prod": "npx cypress open --config-file prod.config.js",
     "cy-staging": "npx cypress open --config-file staging.config.js"
+    
   },
   "repository": {
     "type": "git",
