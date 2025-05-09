@@ -10,7 +10,7 @@
     "e2e": "npx cypress run --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/**/*.cy.js'  --browser chrome",
     "parabank": "npx cypress run --config-file parabank.config.js --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/parabank/*.cy.js' --browser chrome",
     "saucedemo": "npx cypress run --config-file saucedemo.config.js --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/saucedemo/*.cy.js' --browser chrome",
-    "datatables": "npx cypress run --config-file datatables.config.js --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/data-tables-net/*.cy.js' --browser chrome",
+    "datatables": "npx cypress run --config-file staging.config.js --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/data-tables-net/*.cy.js' --browser chrome",
     "cy-qa": "npx cypress open --config-file qa.config.js",
     "cy-prod": "npx cypress open --config-file prod.config.js",
     "cy-staging": "npx cypress open --config-file staging.config.js"
