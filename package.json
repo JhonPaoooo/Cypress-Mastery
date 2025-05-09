@@ -7,7 +7,13 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "login-test": "npx cypress run --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196  --spec 'cypress/e2e/login.cy.js' --browser chrome",
     "ecom-flow-test": "npx cypress run --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/ecom-flow.cy.js'  --browser chrome",
-    "e2e": "npx cypress run --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/**/*.cy.js'  --browser chrome"
+    "e2e": "npx cypress run --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/**/*.cy.js'  --browser chrome",
+    "parabank": "npx cypress run --config-file parabank.config.js --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/parabank/*.cy.js' --browser chrome",
+    "saucedemo": "npx cypress run --config-file saucedemo.config.js --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/saucedemo/*.cy.js' --browser chrome",
+    "datatables": "npx cypress run --config-file datatables.config.js --record --key ce7bfafb-3b32-4b2a-ad72-2cf8f48ab196 --spec 'cypress/e2e/data-tables-net/*.cy.js' --browser chrome",
+    "cypress-parabank": "npx cypress open --config-file parabank.config.js",
+    "cypress-saucedemo": "npx cypress open --config-file saucedemo.config.js",
+    "cypress-datatables": "npx cypress open --config-file datatables.config.js"
   },
   "repository": {
     "type": "git",

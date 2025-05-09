@@ -9,7 +9,7 @@ module.exports = defineConfig({
   //viewportHeight: 660,
   //viewportWidth: 1000,
   defaultCommandTimeout: 1000,
-  retries: 6,
+  // retries: 6,
   reporter: 'cypress-mochawesome-reporter',
   reporterOptions: {
     charts: true,
@@ -22,7 +22,7 @@ module.exports = defineConfig({
     excludeSpecPattern: ['cypress/e2e/postman-api/*'],
     setupNodeEvents(on, config) {
       require('cypress-mochawesome-reporter/plugin')(on);
-
+      
       // implement node event listeners here
       on('before:run', async (details) => {
         console.log('override before:run');
